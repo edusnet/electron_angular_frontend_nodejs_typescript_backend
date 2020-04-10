@@ -10,3 +10,5 @@ I think the electron is a great idea. I especially appreciate the idea of develo
 
 I've spend a few days setting up the environment, so I hope it saves sometime to anybody. 
 
+I suppose if you use this project you have the background to install NodeJs, chrome debugger plugin, etc on you computer and install npm packages for running a downloaded project, buy let me know if you need some help or comments. 
+

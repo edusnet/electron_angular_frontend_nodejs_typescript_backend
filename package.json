@@ -1,0 +1,80 @@
+{
+  "name": "factuserve",
+  "version": "1.0.0",
+  "description": "Programa facturación de Servicio de Nuubo",
+  "main": "dist/factuserve.app.js",
+  "scripts": {
+    "build": "tsc && ng build --base-href ./ ",
+    "start": "npm run build && electron dist/factuserve.app.js",
+    "build_production": "tsc -p ./tsconfig.prod.json && ng build --prod --base-href ./",
+    "start_production": "npm run build_production && electron ./dist/factuserve.app.js",
+    "Generate_exe": "del-cli --force ./dist  &&  npm run build_production && electron-packager . FactuServe --overwrite --asar --prune=true --platform=win32 --arch=x64 --out=builds"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "electron": "^8.2.1",
+    "@angular/animations": "~9.0.5",
+    "@angular/common": "~9.0.5",
+    "@angular/compiler": "~9.0.5",
+    "@angular/core": "~9.0.5",
+    "@angular/forms": "~9.0.5",
+    "@angular/platform-browser": "~9.0.5",
+    "@angular/platform-browser-dynamic": "~9.0.5",
+    "@angular/router": "~9.0.5",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900.5",
+    "@angular/cli": "~9.0.5",
+    "@angular/compiler-cli": "~9.0.5",
+    "@angular/language-service": "~9.0.5",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.12.34",
+    "codelyzer": "^5.1.2",
+    "electron": "^8.2.1", 
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "protractor": "~5.4.3",
+    "ts-node": "~8.3.0",
+    "tslint": "^6.1.1",
+    "typescript": "3.7.4"
+  },
+  "build": {
+    "appId": "enupal-electronv1",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  }
+}

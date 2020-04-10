@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,                     /* Generates corresponding '.map' file. */
+    "removeComments": true,                /* Do not emit comments to output. */
+  }
+}

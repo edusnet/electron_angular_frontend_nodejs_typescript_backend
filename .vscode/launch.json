@@ -1,0 +1,38 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+        {
+            "name": "Backend",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+            "windows": {
+              "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+            },
+            "args" : ["."],
+            "outputCapture": "std"
+          },
+		  {
+			"type": "chrome",
+			"request": "attach",
+			"name": "Attach Frontend",
+			"port": 9222,
+            "webRoot": "${workspaceRoot}",
+          },
+          {
+            "name": "Frontend",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "runtimeArgs": [
+              "${workspaceRoot}/dist/factuserve.app.js",
+              "--enable-logging",
+              "--remote-debugging-port=9222"
+            ],
+            "sourceMaps": true,     
+            "trace": "verbose",       
+            "webRoot": "${workspaceRoot}"
+        },
+	]
+}
