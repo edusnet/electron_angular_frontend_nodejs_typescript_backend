@@ -5,7 +5,7 @@ The project is ready to debug the Frontend (renderer process) and the Backend (m
 
 Also includes a script for generating a "compiled" .exe for windows. 
 
-I think the electron is a great idea. I especially appreciate the idea of developing an application packaged in an exe and, in the future, deploying it to a web server with just a few code changes, so if you rewrite the IPC communication code to a common web http request, you can deploy it easily on a web server.  
+I think electron is a great idea. I especially appreciate the idea of developing an application packaged in an exe and, in the future, deploying it to a web server with just a few code changes, so if you rewrite the IPC communication code to a common web http request, you can deploy it easily on a web server.  
 
 
 I've spend a few days setting up the environment, so I hope it saves sometime to anybody. 
