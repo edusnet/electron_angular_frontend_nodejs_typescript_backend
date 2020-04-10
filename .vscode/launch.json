@@ -6,6 +6,7 @@
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
+			"preLaunchTask": "npm: build",
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
             "windows": {
               "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
@@ -24,6 +25,7 @@
             "name": "Frontend",
             "type": "chrome",
             "request": "launch",
+			"preLaunchTask": "npm: build",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "runtimeArgs": [
               "${workspaceRoot}/dist/factuserve.app.js",
